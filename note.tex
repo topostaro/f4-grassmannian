@@ -1,10 +1,24 @@
 \documentclass[uplatex,dvipdfmx]{jsarticle}
 
 \usepackage{amsmath,amssymb, amscd}
+\usepackage{dynkin-diagrams}
+
+%%newtheorems
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
 
 %%newcomands
 
 \newcommand{\defeq}{\mathrel{\mathop:}=}
+
+\newcommand{\lie}{\mathrm{Lie}}
+
 \newcommand{\Sym}{\mathrm{Sym}}
 \newcommand{\ch}[1]{\mathrm{ch}\left( {#1} \right)}
 \newcommand{\td}[1]{\mathrm{td}\left( {#1} \right)}
@@ -166,4 +180,127 @@ where
      \end{CD}
 \end{equation}
 
+\section{Parabolic subgroup}
+
+Let
+$G$
+be a compact connected Lie group.
+
+\begin{definition}
+    A subgroup
+    $P$
+    of
+    the complexification $G_\mathbb{C}$
+    is \textit{parabolic} if it contains the Borel subgroup of
+    $G$.
+\end{definition}
+
+Let
+$\mathcal{S}_{\mathfrak{p}}$
+be a subset of the set of simple roots
+$\mathcal{S}$
+of 
+$G$.
+We call this the \textit{set of uncrossed nodes}.
+Then, we will consider a parabolic subgroup
+$P$
+of
+$G$
+which corresponds to this Lie subalgebra:
+
+\begin{align}
+    \mathfrak{p} &\defeq 
+        \mathfrak{l} 
+        \oplus 
+        \mathfrak{n}, \\
+    \mathfrak{l} &\defeq
+        \mathfrak{h}
+        \oplus
+        \bigoplus_{\alpha \in (\mathrm{span} \mathcal{S}_{\mathfrak{p}}) \cap \Delta}
+            \mathfrak{g}_\alpha, \\
+    \mathfrak{n} &\defeq
+        \bigoplus_{\alpha \in \Delta^+ \setminus (\mathrm{span} \mathcal{S}_{\mathfrak{p}})}
+            \mathfrak{g}_\alpha.
+\end{align}
+
+We say that
+$\mathfrak{l}$
+is the \textit{Levi part} and
+$\mathfrak{n}$
+is the \textit{nilpotent part} of
+$\mathfrak{p}$.
+
+\begin{example}
+    If
+    $G$
+    is
+    $A_3$-type
+    and let the uncrossed nodes be
+    $\mathcal{S}_{\mathfrak{p}} = \left\{ \alpha_2, \alpha_3 \right\}$,
+    then we will figure the crossed dynkin diagram of
+    $P$
+    as this:
+    \begin{equation}
+        \dynkin[label]{A}{x**}.
+    \end{equation}
+
+    The quotient
+    $G/P$
+    is isomorphic to
+    $\mathbb{P}^3$.
+\end{example}
+
+\begin{example}
+    If
+    $G$
+    is
+    $A_5$-type
+    and let the uncrossed nodes be
+    $\mathcal{S}_{\mathfrak{p}} = \left\{ \alpha_1, \alpha_3, \alpha_4, \alpha_5 \right\}$,
+    then we will figure the crossed dynkin diagram of
+    $P$
+    as this:
+    \begin{equation}
+        \dynkin[label]{A}{*x***}.
+    \end{equation}
+
+    In this case, the quotient
+    $G/P$
+    is isomorphic to
+    $\mathrm{Gr}\left( 2, 6 \right)$.
+\end{example}
+
+Let
+$H$
+be the intesection of
+$G$
+and
+$P$.
+The Weyl group 
+$W_H$
+of
+$H$
+equals to the Weyl group of the Levi part
+$\mathfrak{l}$(The Levi part is a semisimple Lie algebra).
+
+\begin{example}
+    Let 
+    $G$ 
+    be a 
+    $A_5$-group
+    and 
+    $\mathcal{S}_{\mathfrak{p}} =$    
+    $\left\{ \alpha_1, \alpha_3, \alpha_4, \alpha_5 \right\}$.
+    \begin{equation*}
+        \dynkin[label]{A}{*x***}
+    \end{equation*}
+    Then, the Levi part
+    $\mathfrak{l}$
+    is isomorphic to
+    $\mathfrak{sl}_2 \times \mathbb{C} \times \mathfrak{sl}_4$.
+    Thus,
+    $W_H \subseteq W_G$
+    is isomorphic to
+    $\mathfrak{S}_2 \times \mathfrak{S}_4 \subseteq \mathfrak{S}_6$
+\end{example}
 \end{document}
