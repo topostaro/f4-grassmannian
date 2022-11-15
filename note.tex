@@ -2,6 +2,7 @@
 
 \usepackage{amsmath,amssymb, amscd}
 \usepackage{dynkin-diagrams}
+\usepackage{enumerate}
 
 %%newtheorems
 
@@ -254,6 +255,215 @@ $\mathfrak{l}$(The Levi part is a reductive Lie algebra).
 \end{example}
 
 
+\section{Chern roots of equivariant vector bundles}
+
+
+Let
+$G$
+be a reductive complex Lie group and
+$\Lambda$
+be the weight lattice of
+$G$
+with fundamental weights
+$\left\{ \omega_1, \omega_2, \ldots, \omega_r \right\}$.
+Let
+$P$
+be a parabolic subgroup of
+$G$.
+
+\begin{definition}
+    Let 
+    $\lambda = \sum_{i = 1}^r \lambda_i \omega_i$ 
+    be a weight of
+    $G$.
+    \begin{enumerate}
+        \item
+            $\lambda$
+            is
+            \textit{integral} 
+            if
+            $\lambda_i$
+            is integral for any
+            $i = 1, \ldots, r$.
+        \item 
+            $\lambda$
+            is
+            $\mathfrak{p}$\textit{-dominant} 
+            if
+            $\lambda$
+            is integral and
+            $\lambda_i$
+            is positive for any
+            $i$
+            such that
+            $\alpha_i \in \mathcal{S}_\mathfrak{p}$.
+        \item 
+            $\lambda$
+            is
+            $\mathfrak{p}$\textit{-dominant} 
+            if
+            $\lambda$
+            is integral and
+            $\lambda_i$
+            is positive for any
+            $i = 1, \ldots, r$.
+    \end{enumerate}
+\end{definition}
+
+\subsection{The weight set of irreducible representations of $P$}
+
+For an integral
+$\mathfrak{p}$-dominant
+weight
+$\lambda \in \Lambda$,
+we get a irreducible representation
+$V_\lambda^P$.
+We can calculate the set of its weights which is denoted by
+$\Delta(V_\lambda^P)$ as below:
+
+\underline{Step 1:}
+Make a list of maximal connected dynkin subdiagrams consisting of uncrossed nodes
+\begin{equation}
+    \left\{ 
+        \mathcal{S}_1, 
+        \ldots, 
+        \mathcal{S}_m 
+    \right\}
+    =
+    \left\{
+        \left\{ \alpha_{n(1)}, \alpha_{n(1)+1}, \ldots \right\},
+        \ldots, 
+        \left\{ \alpha_{n(m)}, \alpha_{n(m)+1}, \ldots \right\} 
+    \right\}.
+\end{equation}
+
+\underline{Step 2:}
+For each subdiagram 
+$\mathcal{S}_i$, 
+calculate the weight set of the highest weight representation
+associated to the weight
+$\lambda_i 
+\defeq
+\sum_{k = 0}^{\# \mathcal{S}_i - 1}
+\lambda_{n(i) + k} \omega_{n(i) + k}$
+of 
+$\mathfrak{g}_i
+\defeq
+(\operatorname{span} \mathcal{S}_i)_\mathbb{C} 
+\oplus 
+\bigoplus_{\alpha \in (\operatorname{span} \mathcal{S}_i)\cap \Delta}
+\mathfrak{g}_\alpha$ which can be described as below:
+\begin{equation}
+    \Delta\left( 
+        V
+        ^{\mathfrak{g}_i}
+        _{\lambda_i}
+    \right)
+    =
+    \left\{ 
+        \lambda_i - \sum_{\alpha_k \in \mathcal{S}_i} n_k^{(j)} \alpha_k
+    \right\}
+    _{j = 1}
+    ^{\operatorname{dim}
+        V
+        ^{\mathfrak{g}_i}
+        _{\lambda_i}}.
+\end{equation}
+
+\underline{Step 3:}
+Then, the weight set 
+$\Delta(V_\lambda^P)$
+is
+\begin{equation}
+    \left\{ 
+        \lambda 
+        - 
+        \sum_{i = 1}^m
+        \sum_{\alpha_k \in \mathcal{S}_i} 
+        n_k^{(j_i)} \alpha_k
+    \right\}_{\vec{j} \in J}
+\end{equation}
+where
+\begin{equation}
+    \vec{j}
+    =
+    \left( j_1, \ldots, j_m \right)
+    \in
+    J
+    =
+    \prod_{i = 1}^m
+    \left\{ 1, \ldots, \operatorname{dim} V^{\mathfrak{g}_i}_{\lambda_i} \right\}.
+\end{equation}
+
+\subsection{Chern roots of equivariant vector bundles}
+
+For an integral
+$\mathfrak{p}$-dominant
+weight
+$\lambda \in \Lambda$,
+we define an equivariant vector bundle 
+$\mathcal{E}_\lambda$
+over
+$G/P$
+by
+\begin{equation}
+    \mathcal{E}_\lambda
+    \defeq
+    \left( 
+        G
+        \times_P
+        V_\lambda
+     \right)^{\vee}.
+\end{equation}
+
+The set of chern roots of
+$\mathcal{E}_\lambda$
+equals to
+\begin{equation}
+    \left\{ 
+        \sum_{i = 1}^r
+        \lambda_i
+        x_i
+        \middle|
+        \lambda \in \Delta((V_\lambda^P)^{\vee})
+    \right\}
+\end{equation}
+
+where
+$x_i$
+is the corresponding element of
+$\omega_i$
+in
+$\mathrm{H}_G(G/B)$
+along the isomorphism
+$\mathrm{H}_G(G/B) \cong \Sym^* \Lambda$.
+
+\subsection{Chern roots of the tangent bundle of G/P}
+
+The tangent bundle 
+$T_{G/P}$
+is isomorphic to
+$G \times_P (\mathfrak{g}/\mathfrak{p})$
+where
+$\mathfrak{g}/\mathfrak{p}$
+is a 
+$P$-vector space 
+with the adjoint action.
+Thus, the set of chern roots is
+\begin{equation}
+    \left\{ 
+        \sum_{i = 1}^r
+        \lambda_i
+        x_i
+        \middle|
+        \lambda \in \Delta(\mathfrak{g}/\mathfrak{p})
+        =
+        \Delta^-_G 
+        \setminus
+        \operatorname{span} \mathcal{S}_\mathfrak{p}
+    \right\}.
+\end{equation}
+
 \section{Equivariant integration}
 
 Let 
@@ -303,9 +513,9 @@ where
 
 \begin{equation}
     \begin{CD}
-        \mathrm{H}^*_G(G/H) @>{\mathrm{B}k_!}>> \mathrm{H}_G\left( pt \right) \\
+        \mathrm{H}^*_G(G/H) @>{\mathrm{B}k_!}>> \mathrm{H}_G^*\left( pt \right) \\
         @VVV    @V{\mathrm{B}j^*}VV \\
-        \mathrm{H}^*_T(G/H) @>{\pi_!}>> \mathrm{H}^*_T(pt) 
+        \mathrm{H}^*_T(G/H) @>{\pi_!}>> \mathrm{H}^*_T(pt) \cong \mathrm{H}^*_G(G_\mathbb{C}/B)
      \end{CD}
 \end{equation}
 
