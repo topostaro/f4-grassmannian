@@ -255,6 +255,26 @@ $\mathfrak{l}$(The Levi part is a reductive Lie algebra).
 \end{example}
 
 
+\begin{example}
+    We assume that
+    $G$
+    is
+    $A_n$-type
+    and
+    $\mathcal{S}_\mathfrak{p}$
+    is any subset of 
+    $\left\{\alpha_1, \ldots, \alpha_n \right\}$.
+
+    We denote the maximal connected intervals consisting of uncrossed nodes by
+    \begin{equation}
+        \{[n(1), n(1) + l(1) - 1], \ldots, [n(m), n(m) + l(m) - 1]\}.
+    \end{equation}
+    Then,
+    \begin{equation}
+        G/P \cong \mathrm{SU}(n+1)/\mathrm{SU}
+    \end{equation}
+\end{example}
+
 \section{Chern roots of equivariant vector bundles}
 
 
@@ -300,7 +320,7 @@ $G$.
         \item 
             $\lambda$
             is
-            $\mathfrak{p}$\textit{-dominant} 
+            $\mathfrak{g}$\textit{-dominant} 
             if
             $\lambda$
             is integral and
@@ -519,4 +539,226 @@ where
      \end{CD}
 \end{equation}
 
+\section{Construction of a Calabi-Yau manifold}
+
+Let
+$G$
+be a complex Lie group of type
+$F_4$
+and let
+$\lambda = \left( 0, 1, 1, 0 \right)$
+be a weight
+of
+$G$.
+Let us consider two parabolic Lie group
+$P_1$
+and
+$P_2$
+corresponding to these dynkin diagrams.
+\begin{align}
+    P_1\colon \dynkin[label]{F}{*x**} \\
+    P_2\colon \dynkin[label]{F}{**x*}
+\end{align}
+
+
+\begin{align}
+    \left( \mathfrak{g}/\mathfrak{p_1} \right)^\vee
+    &\cong
+    V^{P_1}_{(1, 0, -1, 1)}
+    +
+    V^{P_1}_{(0, 1, -2, 2)}
+    +
+    V^{P_1}_{(0, 0, 0, 1)}
+    +
+    V^{P_1}_{(1, 0, 0, 0)} \\
+    \left( \mathfrak{g}/\mathfrak{p_2} \right)^\vee
+    &\cong
+    V^{P_2}_{(1, -1, 0, 2)}
+    +
+    V^{P_2}_{(0, -1, 2, 0)}
+    +
+    V^{P_2}_{(1, 0, 0, 0)}
+\end{align}
+
+
+\begin{equation}
+    \begin{alignedat}{2}
+        \Delta\left( V^{P_1}_{(1, 0, -1, 1)} \right)
+        =
+        \{ 
+            &\lambda_{1, 1} = (1, 0, -1, 1),\\
+            &\lambda_{1, 1} - \alpha_1,\\
+            &\lambda_{1, 1} - \alpha_1 &- \alpha_2,\\
+            &\lambda_{1, 1} &&- \alpha_4,\\
+            &\lambda_{1, 1} - \alpha_1 &&- \alpha_4,\\
+            &\lambda_{1, 1} - \alpha_1 &- \alpha_2 &- \alpha_4\\
+        \}
+    \end{alignedat}
+\end{equation}
+
+\begin{equation}
+    \begin{alignedat}{2}
+        \Delta\left( V^{P_1}_{(0, 1, -2, 2)} \right)
+        =
+        \{
+            &\lambda_{1,2} = (0, 1, -2, 2),\\
+            &\lambda_{1,2} &- \alpha_2,\\
+            &\lambda_{1,2} - \alpha_1 &- \alpha_2,\\
+            &\lambda_{1,2} &&- \alpha_4,\\
+            &\lambda_{1,2} &- \alpha_2 &- \alpha_4,\\
+            &\lambda_{1,2} - \alpha_1 &- \alpha_2 &- \alpha_4,\\
+            &\lambda_{1,2} &&- 2\alpha_4,\\
+            &\lambda_{1,2} &- \alpha_2 &- 2\alpha_4,\\
+            &\lambda_{1,2} - \alpha_1 &- \alpha_2 &- 2\alpha_4\\
+            \}
+    \end{alignedat}
+\end{equation}
+
+\begin{equation}
+    \begin{alignedat}
+        \Delta\left( V^{P_1}_{(0, 0, 0, 1)} \right)
+        =
+        \{
+            &\lambda_{1,3} = (0, 0, 0, 1), \\
+            &\lambda_{1,3} - \alpha_4\\
+        \}
+    \end{alignedat}
+\end{equation}
+
+\begin{equation}
+    \begin{alignedat}
+        \Delta\left( V^{P_1}_{(1, 0, 0, 0)} \right)
+        =
+        \{
+            &\lambda_{1,4} = (1, 0, 0, 0), \\
+            &\lambda_{1,4} - \alpha_1,\\
+            &\lambda_{1,4} - \alpha_1 - \alpha_2\\
+        \}
+    \end{alignedat}
+\end{equation}
+
+\begin{equation}
+    \begin{alignedat}
+        \Delta\left( V^{P_2}_{(1, -1, 0, 2)} \right)
+        =
+        \{
+            &\lambda_{2,1} = (1, -1, 0, 2),\\
+            &\lambda_{2,1} &&- \alpha_4,\\
+            &\lambda_{2,1} &- \alpha_3 &-\alpha_4,\\
+            &\lambda_{2,1} &&- 2\alpha_4,\\
+            &\lambda_{2,1} &- \alpha_3 &- 2\alpha_4,\\
+            &\lambda_{2,1} &- 2\alpha_3 &- 2\alpha_4,\\
+            &\lambda_{2,1} - \alpha_1,\\
+            &\lambda_{2,1} - \alpha_1 &&- \alpha_4,\\
+            &\lambda_{2,1} - \alpha_1 &- \alpha_3 &-\alpha_4,\\
+            &\lambda_{2,1} - \alpha_1 &&- 2\alpha_4,\\
+            &\lambda_{2,1} - \alpha_1 &- \alpha_3 &- 2\alpha_4,\\
+            &\lambda_{2,1} - \alpha_1 &- 2\alpha_3 &- 2\alpha_4\\
+        \}
+    \end{alignedat}
+\end{equation}
+
+\begin{equation}
+    \begin{alignedat}{2}
+        \Delta\left( V^{P_2}_{(0, -1, 2, 0)} \right)
+        =
+        \{
+            &\lambda_{2,2} = (0, -1, 2, 0),\\
+            &\lambda_{2,2} - \alpha_3,\\
+            &\lambda_{2,2} - 2\alpha_3,\\
+            &\lambda_{2,2} - \alpha_3 -\alpha_4,\\
+            &\lambda_{2,2} - 2\alpha_3 - \alpha_4,\\
+            &\lambda_{2,2} - 2\alpha_3 - 2\alpha_4\\
+        \}
+    \end{alignedat}
+\end{equation}
+
+\begin{equation}
+    \begin{alignedat}
+        \Delta\left( V^{P_2}_{(1, 0, 0, 0)} \right)
+        =
+        \{
+            &\lambda_{2,3} = (1, 0, 0, 0),\\
+            &\lambda_{2,3} - \alpha_1\\
+        \}
+    \end{alignedat}
+\end{equation}
+
+
+Let
+$\mathcal{E}_\lambda \to G/P$
+be an equivariant vector bundle over a homogeneous space.
+For a generic section
+$s$
+of
+$\mathcal{E}_\lambda$,
+the zero locus
+$X \defeq s^{-1}(0)$
+is a smooth complete intersection with chern class
+\begin{align}
+    \mathrm{c}(X)
+    &=
+    \frac
+    {\mathrm{c}(G/P)}
+    {\mathrm{c}(\mathcal{E})}\\
+    &=
+    \frac
+    {\prod_{\mu \in \Delta(\mathfrak{g}/\mathfrak{p}^\vee)}(1+\mathrm{c}_1(\mathcal{L}_\mu))}
+    {\prod_{\nu \in \Delta(V^{P\vee}_\lambda)}(1+\mathrm{c}_1(\mathcal{L}_\nu))}
+\end{align}
+
+Now, we fix
+$G$,
+$P_1$
+and
+$P_2$
+as above and
+$\lambda = (0, 1, 1, 0)$.
+Then, the zero loci
+$X_1$
+and
+$X_2$
+are Calabi-Yau,
+i.e. their
+$\mathrm{c}_1$
+equal to
+$0$.
+
+\begin{equation}
+    \begin{alignedat}
+        \Delta\left( V^{P_1}_{(0, 1, 1, 0)} \right)
+        =
+        \{
+            &\lambda = (0, 1, 1, 0),\\
+            &\lambda - \alpha_2,\\
+            &\lambda - \alpha_1 - \alpha_2\\
+        \}
+    \end{alignedat}
+\end{equation}
+
+\begin{equation}
+    \begin{alignedat}
+        \Delta\left( V^{P_2}_{(0, 1, 1, 0)} \right)
+        =
+        \{
+            &\lambda = (0, 1, 1, 0),\\
+            &\lambda - \alpha_3,\\
+            &\lambda - \alpha_3 - \alpha_4\\
+        \}
+    \end{alignedat}
+\end{equation}
+
+\begin{align}
+    \mathrm{c}_1(T_{G/P_1})
+    &=
+    \sum_{\mu \in \Delta(\mathfrak{g}/\mathfrak{p}_1^\vee)}\mathrm{c}_1(\mathcal{L}_\mu)
+    -
+    \sum_{\nu \in \Delta(V^{P_1\vee}_\lambda)}\mathrm{c}_1(\mathcal{L}_\nu)\\
+    &=
+    0
+\end{align}
+
+The same equation for
+$G/P_2$
+is also true.
 \end{document}
