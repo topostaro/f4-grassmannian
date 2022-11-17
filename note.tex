@@ -313,7 +313,7 @@ $G$.
             $\lambda$
             is integral and
             $\lambda_i$
-            is positive for any
+            is non-negative for any
             $i$
             such that
             $\alpha_i \in \mathcal{S}_\mathfrak{p}$.
@@ -325,7 +325,7 @@ $G$.
             $\lambda$
             is integral and
             $\lambda_i$
-            is positive for any
+            is non-negative for any
             $i = 1, \ldots, r$.
     \end{enumerate}
 \end{definition}
@@ -556,8 +556,8 @@ and
 $P_2$
 corresponding to these dynkin diagrams.
 \begin{align}
-    P_1\colon \dynkin[label]{F}{*x**} \\
-    P_2\colon \dynkin[label]{F}{**x*}
+    P_1\colon \dynkin[label]{F}{**x*} \\
+    P_2\colon \dynkin[label]{F}{*x**}
 \end{align}
 
 
@@ -761,4 +761,66 @@ $0$.
 The same equation for
 $G/P_2$
 is also true.
+
+
+\section{Formula for verifications}
+
+Let
+$G$
+be a reductive complex Lie group with a parabolic subgroup
+$P$.
+Let
+$\lambda$
+be a
+$\mathfrak{p}$-dominant
+weight.
+Then, there is a dimension formula 
+induced by HRR and Weyl character formula.
+
+\begin{align}
+    \chi \left( G/P, \mathcal{E}_\lambda \right)
+    &=
+    \int_{G/P}
+    \ch{\mathcal{E}_\lambda}
+    \td{G/P}\\
+    &=
+    \begin{split}
+        &\sum_{i = 0}^{\operatorname{dim} G/P}
+        (\text{degree-$i$ part of} 
+        \prod_{\nu \in \Delta(V_\lambda^\vee)}(1 + \nu))\\
+        &\times (\text{degree-$(\operatorname{dim} G/P - i)$ part of}
+        \prod_{\mu \in \Delta(\mathfrak{g}/\mathfrak{p}^\vee)}
+        \frac{\mu}{1 - e^\mu})
+    \end{split}\\
+    &=
+    (-1)^{l(w)}\operatorname{dim} V^G_{w * \lambda}\\
+    &=
+    \frac
+    {\prod_{\alpha \in \Delta_G^+}((w*\lambda) + \rho, \alpha)}
+    {\prod_{\alpha \in \Delta_G^+}(\rho, \alpha)}\\
+    &=
+    \frac
+    {\prod_{\alpha \in \Delta_G^+}(w(\lambda + \rho), \alpha)}
+    {\prod_{\alpha \in \Delta_G^+}(\rho, \alpha)}
+\end{align}
+
+where
+$w$
+is the unique(if it exist) element of Weyl group of
+$P$
+such that
+$w * \lambda$
+is
+$\mathfrak{g}$-dominant,
+$l(w)$
+is the length of
+$w$
+and
+$w *\lambda$
+means the
+$(-\rho)$-centered
+action by
+$w$,
+i.e.
+$w(\lambda + \rho) - \rho$.
 \end{document}
