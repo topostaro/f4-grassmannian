@@ -783,38 +783,46 @@ induced by HRR and Weyl character formula.
     \int_{G/P}
     \ch{\mathcal{E}_\lambda}
     \td{G/P}\\
+    &= \sum_{
+        [w] \in W_G / W_P
+    }
+    \frac
+    {\sum_{i + j = \operatorname{dim} G/P}(\mathrm{ch}_i \left( \mathcal{E}_\lambda \right)
+    \mathrm{td}_j\left( G/P \right))^w}
+    {\prod_{\alpha \in \mathcal{R}} w \cdot \alpha}\\
     &=
-    \begin{split}
-        &\sum_{i = 0}^{\operatorname{dim} G/P}
-        (\text{degree-$i$ part of} 
-        \prod_{\nu \in \Delta(V_\lambda^\vee)}(1 + \nu))\\
-        &\times (\text{degree-$(\operatorname{dim} G/P - i)$ part of}
-        \prod_{\mu \in \Delta(\mathfrak{g}/\mathfrak{p}^\vee)}
-        \frac{\mu}{1 - e^\mu})
-    \end{split}\\
-    &=
-    (-1)^{l(w)}\operatorname{dim} V^G_{w * \lambda}\\
+    (-1)^{l(w')}\operatorname{dim} V^G_{w' * \lambda}\\
     &=
     \frac
-    {\prod_{\alpha \in \Delta_G^+}((w*\lambda) + \rho, \alpha)}
+    {\prod_{\alpha \in \Delta_G^+}((w'*\lambda) + \rho, \alpha)}
     {\prod_{\alpha \in \Delta_G^+}(\rho, \alpha)}\\
     &=
     \frac
-    {\prod_{\alpha \in \Delta_G^+}(w(\lambda + \rho), \alpha)}
+    {\prod_{\alpha \in \Delta_G^+}(w'(\lambda + \rho), \alpha)}
     {\prod_{\alpha \in \Delta_G^+}(\rho, \alpha)}
 \end{align}
 
-where
-$w$
+where the equivariant Chern character is 
+\begin{equation}
+    \ch{\mathcal{E}_\lambda} = \prod_{\nu \in \Delta(V_\lambda^\vee)}(1 + \nu),
+\end{equation}
+
+the equivariant Todd class is
+\begin{equation}
+    \td{G/P} = \prod_{\mu \in \Delta(\mathfrak{g}/\mathfrak{p}^\vee)}
+    \frac{\mu}{1 - e^\mu},
+\end{equation}
+and
+$w'$
 is the unique(if it exist) element of Weyl group of
 $P$
 such that
-$w * \lambda$
+$w' * \lambda$
 is
 $\mathfrak{g}$-dominant,
-$l(w)$
+$l(w')$
 is the length of
-$w$
+$w'$
 and
 $w *\lambda$
 means the
