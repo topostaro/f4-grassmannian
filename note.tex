@@ -3,7 +3,7 @@
 \usepackage{amsmath,amssymb, amscd}
 \usepackage{dynkin-diagrams}
 \usepackage{enumerate}
-\usepackage{url}
+\usepackage{hyperref}
 
 %%theorems
 
@@ -84,9 +84,9 @@ where
 
 \section{Chern character}
 
-\subsection{The definition using chern roots}
+\subsection{The definition using Chern roots}
 
-Chern character map is a homomorphsim from the complex K-theory ring
+Chern character map is a homomorphism from the complex K-theory ring
 $\mathrm{K}(X)$
 to the rational cohomology
 $\mathrm{H}(X; \mathbb{Q})$
@@ -100,9 +100,9 @@ be a complex vector bundle of rank
 $r$
 and let
 $x_1, \ldots x_r$
-be the chern roots of
+be the Chern roots of
 $V$.
-Then, the chern character 
+Then, the Chern character 
 $\ch{V}$ 
 of 
 $V$ 
@@ -115,16 +115,17 @@ is defined as
     e^{x_i}.
 \end{equation}
 
-\subsection{Another description using chern classes}
-In the same setting, we can write this class as a polynomial of chern classes.
-Chern roots are the chern classes of line bundles which are the virtual decomposition
+\subsection{Another description using Chern classes}
+
+In the same setting, we can write this class as a polynomial of Chern classes.
+Chern roots are the Chern classes of line bundles which are the virtual decomposition
 of the vector bundle
 $V$.
-So the total chern class of
+So the total Chern class of
 $V$
-has such relation between chern roots
+has such relation between Chern roots
 $x_1, \ldots, x_r$,
-or this is the definition of chern roots.
+or this is the definition of Chern roots.
 \begin{equation}
     \mathrm{c}(V) = \prod_{i=1}^r \left( 1 + x_i \right)
 \end{equation}
@@ -132,9 +133,9 @@ Chern class
 $\mathrm{c}_k(V)$
 is the 
 degree-$k$
-part of the total chern class
+part of the total Chern class
 $\mathrm{c}(V)$.
-Thus, chern classes can be written as below by using chern roots:
+Thus, Chern classes can be written as below by using Chern roots:
 \begin{align}
     \mathrm{c}_0(V) &= 1,\\
     \mathrm{c}_1(V) &= \sum_{i=1}^{r} x_i,\\
@@ -144,17 +145,22 @@ Thus, chern classes can be written as below by using chern roots:
 \end{align}
 
 
-According to \url{http://hdl.handle.net/10993/22395}, let us define a sereies of polynomials:
+Following \url{http://hdl.handle.net/10993/22395},
+we define a sequence
 \begin{align}
-    p_k(c_1, \ldots, c_k) &\in \mathbb{Z}[c_1, \ldots, c_r],\\
+    p_k(c_1, \ldots, c_k) &\in \mathbb{Z}[c_1, \ldots, c_k],
+    k = 1, 2, \ldots
+\end{align}
+of polynomials
+by
+\begin{align}
     p_1(c_1) &= c_1,\\
     p_2(c_1, c_2) &= c_1^2 - 2c_2,\\
     &\vdots\\
     p_k(c_1, \ldots, c_k) &= c_1 \cdot p_{k-1} - 2c_2 \cdot p_{k-2} + \cdots \\
-        &+ (-1)^{l+1}l \cdot c_l \cdot p_{k-l} + \cdots +
+        &\qquad + (-1)^{l+1}l \cdot c_l \cdot p_{k-l} + \cdots +
         (-1)^k k \cdot c_k.
 \end{align}
-
 Then, we have
 \begin{equation}
     \mathrm{ch}(V)
@@ -178,7 +184,7 @@ First, we define a formal power series:
 
 Let 
 $x_1, \ldots x_d$ 
-be the chern roots of 
+be the Chern roots of 
 $T_M$.
 
 Then, we can define
@@ -497,7 +503,7 @@ by
      \right)^{\vee}.
 \end{equation}
 
-The set of chern roots of
+The set of Chern roots of
 $\mathcal{E}_\lambda$
 equals to
 \begin{equation}
@@ -530,7 +536,7 @@ $\mathfrak{g}/\mathfrak{p}$
 is a 
 $P$-vector space 
 with the adjoint action.
-Thus, the set of chern roots is
+Thus, the set of Chern roots is
 \begin{equation}
     \left\{ 
         \sum_{i = 1}^r
@@ -755,7 +761,7 @@ of
 $\mathcal{E}_\lambda$,
 the zero locus
 $X \defeq s^{-1}(0)$
-is a smooth complete intersection with chern class
+is a smooth complete intersection with Chern class
 \begin{align}
     \mathrm{c}(X)
     &=
