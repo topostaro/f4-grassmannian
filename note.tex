@@ -3,6 +3,7 @@
 \usepackage{amsmath,amssymb, amscd}
 \usepackage{dynkin-diagrams}
 \usepackage{enumerate}
+\usepackage{url}
 
 %%theorems
 
@@ -21,9 +22,10 @@
 \newcommand{\lie}{\mathrm{Lie}}
 %%\newcommand\span{\operatorname{span}}
 
-\newcommand{\Sym}{\mathrm{Sym}}
 \newcommand{\ch}[1]{\mathrm{ch}\left( {#1} \right)}
 \newcommand{\td}[1]{\mathrm{td}\left( {#1} \right)}
+
+\DeclareMathOperator{\Sym}{Sym}
 
 \begin{document}
 
@@ -82,6 +84,16 @@ where
 
 \section{Chern character}
 
+\subsection{The definition using chern roots}
+
+Chern character map is a homomorphsim from the complex K-theory ring
+$\mathrm{K}(X)$
+to the rational cohomology
+$\mathrm{H}(X; \mathbb{Q})$
+for some nice topological space
+$X$.
+We can describe it concretely as below.
+
 Let 
 $V \to M$ 
 be a complex vector bundle of rank 
@@ -90,7 +102,6 @@ and let
 $x_1, \ldots x_r$
 be the chern roots of
 $V$.
-
 Then, the chern character 
 $\ch{V}$ 
 of 
@@ -102,6 +113,56 @@ is defined as
     = 
     \sum_{i=1}^{r}
     e^{x_i}.
+\end{equation}
+
+\subsection{Another description using chern classes}
+In the same setting, we can write this class as a polynomial of chern classes.
+Chern roots are the chern classes of line bundles which are the virtual decomposition
+of the vector bundle
+$V$.
+So the total chern class of
+$V$
+has such relation between chern roots
+$x_1, \ldots, x_r$,
+or this is the definition of chern roots.
+\begin{equation}
+    \mathrm{c}(V) = \prod_{i=1}^r \left( 1 + x_i \right)
+\end{equation}
+Chern class
+$\mathrm{c}_k(V)$
+is the 
+degree-$k$
+part of the total chern class
+$\mathrm{c}(V)$.
+Thus, chern classes can be written as below by using chern roots:
+\begin{align}
+    \mathrm{c}_0(V) &= 1,\\
+    \mathrm{c}_1(V) &= \sum_{i=1}^{r} x_i,\\
+    \mathrm{c}_2(V) &= \sum_{i \neq j} x_ix_j,\\
+    &\vdots\\
+    \mathrm{c}_i(V) &= (\text{symmetric polynomial of degree $i$})(x_1,\ldots,x_r).
+\end{align}
+
+
+According to \url{http://hdl.handle.net/10993/22395}, let us define a sereies of polynomials:
+\begin{align}
+    p_k(c_1, \ldots, c_k) &\in \mathbb{Z}[c_1, \ldots, c_r],\\
+    p_1(c_1) &= c_1,\\
+    p_2(c_1, c_2) &= c_1^2 - 2c_2,\\
+    &\vdots\\
+    p_k(c_1, \ldots, c_k) &= c_1 \cdot p_{k-1} - 2c_2 \cdot p_{k-2} + \cdots \\
+        &+ (-1)^{l+1}l \cdot c_l \cdot p_{k-l} + \cdots +
+        (-1)^k k \cdot c_k.
+\end{align}
+
+Then, we have
+\begin{equation}
+    \mathrm{ch}(V)
+    =
+    r +
+    \sum_{k=1}^{\operatorname{dim} M}
+    \frac{1}{k!}
+    p_k(\mathrm{c}_1(V), \ldots, \mathrm{c}_r(V)).
 \end{equation}
 
 
