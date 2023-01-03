@@ -35,14 +35,19 @@ class ParabolicSubgroup:
         return self.R_G.space()
     
     def ambient_space_dimension(self):
-        return self.R_G.space().dimension()
+        L = self.R_G.space()
+        if L is None:
+            raise TypeError("Empty ambient space!")
+        return L.dimension()
 
     # Sagemathのライブラリでは1-indexを用いるが、ここでは簡単のためとりあえず0-indexで表す
     def simple_roots(self):
-        return [ self.R_G.simple_roots()[i] for i in set(1..self.G.rank()) - set(self.crossed_out_nodes)]
+        return [ self.R_G.simple_roots()[i] for i in set(range(1,self.G.rank() + 1)) - set(self.crossed_out_nodes)]
 
     def positive_roots(self):
         L = self.ambient_space()
+        if L is None:
+            raise TypeError("Empty ambient space!")
 
         # positive rootからcutoutされるsimple rootを引き, positiveでなければuncrossed nodeから生成されると判定
         roots = [ pr for pr in self.G.root_system().root_lattice().positive_roots()]
@@ -53,7 +58,7 @@ class ParabolicSubgroup:
         return [ L(pr) for pr in roots ]
 
     # 引数の`weight`は基本ウェイトを基底にして表示したもの
-    def weight_muliplicities(self, weight) -> dict:
+    def weight_multiplicities(self, weight) -> dict:
         # GとLのディンキン図の頂点のずれを補正する関数
         def correct_index(index: int) -> int:
             for i in range(len(self.crossed_out_nodes)):
@@ -62,7 +67,7 @@ class ParabolicSubgroup:
             return index + len(self.crossed_out_nodes)
 
         fws_L = [fw for fw in self.R_L.fundamental_weights()] # conversion from 1-index to 0-index
-        weight_for_L = [ weight[i - 1] for i in set(1..len(weight))-set(self.crossed_out_nodes)] 
+        weight_for_L = [ weight[i - 1] for i in set(range(1,len(weight) + 1))-set(self.crossed_out_nodes)] 
         weight_for_L = sum( weight_for_L[i] * fws_L[i] for i in range(self.L.rank()))
 
         fws_G = [fw for fw in self.R_G.fundamental_weights()]
@@ -74,10 +79,14 @@ class ParabolicSubgroup:
         for k, v in mul_set.items():
             w = weight_for_G \
                 + sum(k[i - 1] * self.R_G.simple_roots()[correct_index(i)] 
-                    for i in (1..self.L.rank()))
+                    for i in range(1,self.L.rank() + 1))
             result[w] = v
 
         return result
     
     def weyl_dimension(self, weight: list) -> int:
-        return self.ambient_space().weyl_dimension(sum(weight[i - 1] * self.R_G.fundamental_weights()[i] for i in (1..self.G.rank())))
+        L = self.ambient_space()
+        if L is None:
+            raise TypeError("Empty ambient space!")
+
+        return L.weyl_dimension(sum(weight[i - 1] * self.R_G.fundamental_weights()[i] for i in range(1,self.G.rank() + 1)))
